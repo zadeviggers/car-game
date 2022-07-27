@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Constants
-    private const float ColliderTorque = 3500.0f, RenderRotationSpeed = 1.0f;
+    public float ColliderTorque;
+    public float RenderRotationSpeed;
 
     // Components
     private Rigidbody rb;
@@ -26,12 +27,13 @@ public class PlayerController : MonoBehaviour
 
         // Left or right movement
         float horizontalInput = Input.GetAxis("Horizontal");
-
+        float sum = 0;
         // If the user isn't telling the car to move, stop it from moving
         if (horizontalInput == 0)
         {
             foreach (Wheel wheel in wheels)
             {
+                sum += wheel.collider.rpm;
                 wheel.collider.motorTorque = 0;
             }
         }
@@ -52,11 +54,12 @@ public class PlayerController : MonoBehaviour
             // Move the car
             foreach (Wheel wheel in wheels)
             {
+                sum += wheel.collider.rpm;
                 wheel.collider.motorTorque = motorTorque;
                 wheel.renderer.transform.Rotate(rotation);
-                Debug.Log(wheel.collider.rpm);
             }
         }
+        Debug.Log(sum / wheels.Count);
     }
 }
 
