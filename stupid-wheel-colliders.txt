@@ -1,0 +1,10 @@
+https://gamedev.stackexchange.com/questions/187477/unity-3d-slow-car-wheel-colliders
+https://docs.unity3d.com/ScriptReference/WheelCollider.ConfigureVehicleSubsteps.html
+https://twitter.com/vehiclephysics/status/1292816028737601538?lang=en
+https://forum.unity.com/threads/can-anyone-point-me-to-some-resources-that-go-into-the-maths-of-what-asymptote-and-extremum-are.947193/
+https://forum.unity.com/threads/the-dark-art-of-unity-wheel-colliders-what-unity-doesnt-tell-you.1109261/
+https://answers.unity.com/questions/1255632/how-do-i-calculate-grip-of-a-tyre-and-make-it-grip.html
+https://stackoverflow.com/questions/63436975/why-is-sideways-tire-slip-separated-from-forward-slip-on-unity-wheel-collider
+https://forum.unity.com/threads/wheelcollider-friction-explored.346687/
+https://github.com/AlTheSlacker/UnityCar
+https://answers.unity.com/questions/1558151/best-wheel-collider-values-forward-frictionsidewar.html

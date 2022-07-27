@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
             {
                 wheel.collider.motorTorque = motorTorque;
                 wheel.renderer.transform.Rotate(rotation);
+                Debug.Log(wheel.collider.rpm);
             }
         }
     }
