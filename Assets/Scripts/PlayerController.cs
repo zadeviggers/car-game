@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Constants
-    private const float MaxSpeed = 30.0f, Acceleration = 100.5f, WheelTorque = 5.0f;
+    private const float MaxSpeed = 50.0f, Acceleration = 800.5f, WheelSpeed = 10.0f;
 
     // Components
     private Rigidbody rb;
@@ -42,8 +42,13 @@ public class PlayerController : MonoBehaviour
             // Apply the force
             rb.AddForce(movementForce, ForceMode.Force);
 
+            if (rb.velocity.magnitude > MaxSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * MaxSpeed;
+            }
+
             // Torque to apply to the wheels
-            Vector3 wheelRotation = new Vector3(WheelTorque * direction, 0, 0);
+            Vector3 wheelRotation = new Vector3(WheelSpeed * direction, 0, 0);
 
             // Animate the wheels turning
             foreach (GameObject wheel in wheels) {
