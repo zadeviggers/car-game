@@ -27,13 +27,12 @@ public class PlayerController : MonoBehaviour
 
         // Left or right movement
         float horizontalInput = Input.GetAxis("Horizontal");
-        float sum = 0;
+        
         // If the user isn't telling the car to move, stop it from moving
         if (horizontalInput == 0)
         {
             foreach (Wheel wheel in wheels)
             {
-                sum += wheel.collider.rpm;
                 wheel.collider.motorTorque = 0;
             }
         }
@@ -49,17 +48,23 @@ public class PlayerController : MonoBehaviour
             float motorTorque = ColliderTorque * direction;
 
             // Rotation to make the wheels visually turn
-            Vector3 rotation = new Vector3(RenderRotationSpeed * direction, 0, 0);
 
+            float RPMSum = 0;
             // Move the car
             foreach (Wheel wheel in wheels)
             {
-                sum += wheel.collider.rpm;
                 wheel.collider.motorTorque = motorTorque;
+                RPMSum += wheel.collider.rpm;
+            }
+
+            // Animate the wheels
+            float avgRPM = RPMSum / wheels.Count; // RPM already includes direction
+            Vector3 rotation = new Vector3(avgRPM * Time.deltaTime * RenderRotationSpeed, 0, 0);
+            foreach (Wheel wheel in wheels)
+            {
                 wheel.renderer.transform.Rotate(rotation);
             }
         }
-        Debug.Log(sum / wheels.Count);
     }
 }
 
