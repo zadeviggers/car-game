@@ -19,7 +19,10 @@ public class RotationPositionLock : MonoBehaviour
     private Vector3 startRotation;
 
     
-    void Start() { startRotation = transform.rotation.eulerAngles; }
+    void Start() {
+        startPosition = transform.position;
+        startRotation = transform.rotation.eulerAngles;
+    }
     void LateUpdate()
     {
         // Update positition
