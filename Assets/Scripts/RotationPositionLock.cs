@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script for locking the postiion and rotation of a gameobject on specific axies
 // Based off https://stackoverflow.com/a/67257857
 public class RotationPositionLock : MonoBehaviour
 {

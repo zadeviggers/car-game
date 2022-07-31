@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1276717006130944129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2622789925392228575}
+  m_Layer: 0
+  m_Name: upgrades
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2622789925392228575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276717006130944129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6978508693591524623}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4484235088003507621
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,8 +397,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.10401275, z: 0.034869526}
-  m_Center: {x: -0.000000007450581, y: -0.02308191, z: -0.023389868}
+  m_Size: {x: 0.018826557, y: 0.08777975, z: 0.032823656}
+  m_Center: {x: -0.0000000073770936, y: -0.02106805, z: -0.023389863}
 --- !u!1 &7445045928220807890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +1068,7 @@ Transform:
   - {fileID: 7445045930299218718}
   - {fileID: 7445045928779446216}
   - {fileID: 7445045928372726210}
+  - {fileID: 2622789925392228575}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -1079,6 +1111,8 @@ MonoBehaviour:
     renderer: {fileID: 7445045929936589491}
   - collider: {fileID: 1246305834997583648}
     renderer: {fileID: 7445045929145728428}
+  upgradesHolder: {fileID: 1276717006130944129}
+  upgrades: []
 --- !u!114 &1195418141334593336
 MonoBehaviour:
   m_ObjectHideFlags: 0

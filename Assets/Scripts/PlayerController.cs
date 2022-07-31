@@ -12,13 +12,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public List<Wheel> wheels;
 
+    // Upgrades
+    public GameObject upgradesHolder;
+    public List<Upgrade> upgrades;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    // FixedUpdate is called once per fixed-framerate frame
     void FixedUpdate()
     {
         // --------------
@@ -65,6 +69,24 @@ public class PlayerController : MonoBehaviour
                 wheel.renderer.transform.Rotate(rotation);
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("CollectableUpgrade"))
+        {
+            Upgrade upgrade = other.GetComponent<Upgrade>();
+            AddUpgrade(upgrade);
+        }
+    }
+
+
+    // Adds an upgrade to the car
+    void AddUpgrade(Upgrade upgrade)
+    {
+        upgrade.OnCollected();
+        upgrade.gameObject.transform.SetParent(upgradesHolder.transform);
+        upgrades.Add(upgrade);
     }
 }
 
