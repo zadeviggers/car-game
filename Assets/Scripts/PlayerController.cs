@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         // Left or right movement
         float horizontalInput = Input.GetAxis("Horizontal");
-        
+
         // If the user isn't telling the car to move, stop it from moving
         if (horizontalInput == 0)
         {
@@ -84,9 +84,8 @@ public class PlayerController : MonoBehaviour
     // Adds an upgrade to the car
     void AddUpgrade(Upgrade upgrade)
     {
-        upgrade.OnCollected();
-        upgrade.gameObject.transform.SetParent(upgradesHolder.transform);
         upgrades.Add(upgrade);
+        upgrade.OnCollected(upgradesHolder.transform);
     }
 }
 
