@@ -8,25 +8,23 @@ public class Upgrade : MonoBehaviour
     public Vector3 equippedPosition;
     public Quaternion equippedRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     // When the upgrade is colleted
     public void OnCollected(Transform parentTransform)
     {
+        // Change tag to avoid re-triggers
         tag = "EquippedUpgrade";
+
+        // Change spin animation to active one from idle one
+        Spin spinAnimation = GetComponent<Spin>();
+        spinAnimation.playIdleSpin = false;
+
+        // Parent it under player
         transform.SetParent(parentTransform);
-        // Werid Quaternion stuff. This functions just takes an x, y, and z and creates a quaternion.
+
+        // Update position relative to parent
         transform.localPosition = equippedPosition;
+        // Update rotation
         transform.rotation = equippedRotation;
     }
 }
