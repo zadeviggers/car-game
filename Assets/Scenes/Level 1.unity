@@ -419,6 +419,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2418865955132041856, guid: 1e7c8fcff14e9a54e979f9f5a0ddacdc, type: 3}
+      propertyPath: speed.z
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418865955132041856, guid: 1e7c8fcff14e9a54e979f9f5a0ddacdc, type: 3}
+      propertyPath: playIdleSpin
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2418865955132041860, guid: 1e7c8fcff14e9a54e979f9f5a0ddacdc, type: 3}
       propertyPath: m_Name
       value: SawbladeUpgrade
