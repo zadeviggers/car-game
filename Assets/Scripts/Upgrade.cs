@@ -27,7 +27,7 @@ public class Upgrade : MonoBehaviour
         tag = equippedTag;
 
         // Remove particles
-        Destroy(collectableParticles);
+        collectableParticles.Stop();
 
         // Change spin animation to active one from idle one
         Spin spinAnimation = GetComponent<Spin>();
