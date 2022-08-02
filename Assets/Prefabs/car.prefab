@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 2766142458746521256}
   - component: {fileID: 2623904770563978748}
   - component: {fileID: 5911244947349717160}
-  - component: {fileID: 6784837437782655581}
+  - component: {fileID: 2845841111549383910}
   m_Layer: 0
   m_Name: Car body
   m_TagString: Untagged
@@ -386,7 +386,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6784837437782655581
+--- !u!65 &2845841111549383910
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -397,8 +397,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.018826557, y: 0.08777975, z: 0.032823656}
-  m_Center: {x: -0.0000000073770936, y: -0.02106805, z: -0.023389863}
+  m_Size: {x: 0.020000001, y: 0.10401276, z: 0.03486953}
+  m_Center: {x: -1.6287104e-16, y: -0.023081912, z: -0.023389634}
 --- !u!1 &7445045928220807890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1046,7 @@ GameObject:
   - component: {fileID: 7751666936744763319}
   - component: {fileID: 1195418141334593336}
   m_Layer: 0
-  m_Name: car
+  m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
