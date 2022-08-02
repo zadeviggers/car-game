@@ -7,13 +7,27 @@ public class Upgrade : MonoBehaviour
 {
     public Vector3 equippedPosition;
     public Quaternion equippedRotation;
+    public string equippedTag;
+    public ParticleSystem CollectableParticlesPrefab;
+
+    private ParticleSystem collectableParticles;
+
+    // When the object is created
+    void Start()
+    {
+        // Create idle partcles
+        collectableParticles = Instantiate(CollectableParticlesPrefab, transform.position, transform.rotation);
+    }
 
 
     // When the upgrade is colleted
     public void OnCollected(Transform parentTransform)
     {
         // Change tag to avoid re-triggers
-        tag = "EquippedUpgrade";
+        tag = equippedTag;
+
+        // Remove particles
+        Destroy(collectableParticles);
 
         // Change spin animation to active one from idle one
         Spin spinAnimation = GetComponent<Spin>();

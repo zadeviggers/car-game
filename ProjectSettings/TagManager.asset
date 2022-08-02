@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Wheel
   - CollectableUpgrade
-  - EquippedUpgrade
+  - Destructive
   layers:
   - Default
   - TransparentFX
